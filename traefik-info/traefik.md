@@ -22,4 +22,9 @@ Traefik has two different configuration file:
 * Configuration discovery in Traefik is achieved through Providers. The providers are infrastructure components, whether orchestrators, container engines, cloud providers, or key-value stores.  
 * You can check the list of providers from this [link](https://doc.traefik.io/traefik/providers/overview/#supported-providers).  
 ### docker
-* for using docker as its provider, 
+* for using docker as its provider, first we define the `endpoint` where it should listen for docker container informations:  
+```
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+```
